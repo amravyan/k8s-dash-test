@@ -131,7 +131,7 @@ service:
 ingress:
   ## If true, Kubernetes Dashboard Ingress will be created.
   ##
-  enabled: false
+  enabled: true
 
   ## Kubernetes Dashboard Ingress labels
   # labels:
@@ -178,8 +178,8 @@ ingress:
   ## Kubernetes Dashboard Ingress hostnames
   ## Must be provided if Ingress is enabled
   ##
-  # hosts:
-  #   - kubernetes-dashboard.domain.com
+  hosts:
+    - dashboard.k3s.local
   ## Kubernetes Dashboard Ingress TLS configuration
   ## Secrets must be manually created in the namespace
   ##
@@ -218,7 +218,7 @@ pinnedCRDs:
 ## refs: https://github.com/kubernetes-sigs/dashboard-metrics-scraper
 metricsScraper:
   ## Wether to enable dashboard-metrics-scraper
-  enabled: false
+  enabled: true
   image:
     repository: kubernetesui/metrics-scraper
     tag: v1.0.7
